@@ -1,5 +1,5 @@
 # RDTech_PS_Comm
-An Arduino example for controlling and communicating with Rui Deng Tech digital control power supplies like the DPS5020. The code provides examples for turning the supply output on and off, changing the supply voltage, and changing the current limit. It has been tested with the DPS5020 and DPS5005 supplies, though it seems as though the communication protocol is the same for most of Rui Deng's digital power supplies. The protocol for serial communication is described as a MODBUS protocol, though in practice the order of the two bytes in the checksum are swapped from the MODBUS examples I could find in my research. 
+An Arduino example for controlling and communicating with Rui Deng Tech digital control power supplies like the DPS5020. The code provides examples for turning the supply output on and off, changing the supply voltage, and changing the current limit. It has been tested with the DPS5020 and DPS5005 supplies and seems as though the communication protocol is the same for most of Rui Deng's digital power supplies. The protocol for serial communication is described as a MODBUS protocol, though in practice the order of the two bytes in the checksum are swapped from the MODBUS examples I could find in my research. 
 
 Future work todo:
 
