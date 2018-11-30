@@ -1,0 +1,27 @@
+#######################################
+# Syntax Coloring Map For HX711_ADC
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DPS_powerSupply	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+initDPS	           KEYWORD2
+setDPS_voltage	   KEYWORD2
+setDPS_amperage    KEYWORD2
+setDPS_outputOn    KEYWORD2
+sendData	         KEYWORD2
+crc_DPS	           KEYWORD2
+init_crc16_tab     KEYWORD2
+
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
