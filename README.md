@@ -3,6 +3,4 @@ An Arduino example for controlling and communicating with Rui Deng Tech digital 
 
 Future work todo:
 
-Move the code that handles the device into a proper library instead of cluttering up the main program file.
-
 Implement bidirectional communication. Right now, the code implements functions to send commands to the power supply module. The power supply module will respond with confirmations for some commands and it is possible to query some parameters from the module, but this code does not currently handle that.
