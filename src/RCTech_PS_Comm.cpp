@@ -33,7 +33,7 @@ void DPS_powerSupply::sendData(uint8_t functionCode, uint16_t registerAddress, u
   uint16_t crcVal = crc_DPS(message, 6);
   message[6] = crcVal>>8;
   message[7] = crcVal;
-  Serial1.write(message, 8);
+  _stream->write(message, 8);
 }
 
 //sends data to the power supply
@@ -42,7 +42,7 @@ void DPS_powerSupply::sendData2(uint8_t functionCode, uint16_t registerAddress, 
   uint16_t crcVal = crc_DPS(message, 11);
   message[11] = crcVal>>8;
   message[12] = crcVal;
-  Serial1.write(message, 13);
+  _stream->write(message, 13);
 }
 
 
