@@ -29,7 +29,7 @@ void DPS_powerSupply::setDPS_outputOn (bool turnOn){
 
 //sends data to the power supply
 void DPS_powerSupply::sendData(uint8_t functionCode, uint16_t registerAddress, uint16_t registerValue){
-  byte message[] = {_deviceAddress, functionCode, registerAddress>>8, registerAddress, registerValue>>8, registerValue};
+  byte message[8] = {_deviceAddress, functionCode, registerAddress>>8, registerAddress, registerValue>>8, registerValue};
   uint16_t crcVal = crc_DPS(message, 6);
   message[6] = crcVal>>8;
   message[7] = crcVal;
@@ -38,7 +38,7 @@ void DPS_powerSupply::sendData(uint8_t functionCode, uint16_t registerAddress, u
 
 //sends data to the power supply
 void DPS_powerSupply::sendData2(uint8_t functionCode, uint16_t registerAddress, uint16_t numberofAddresses, uint8_t numberofBytes, uint16_t registerValue, uint16_t register2Value){
-  byte message[] = {_deviceAddress, functionCode, registerAddress>>8, registerAddress, numberofAddresses>>8, numberofAddresses, numberofBytes, registerValue>>8, registerValue, register2Value>>8, register2Value};
+  byte message[13] = {_deviceAddress, functionCode, registerAddress>>8, registerAddress, numberofAddresses>>8, numberofAddresses, numberofBytes, registerValue>>8, registerValue, register2Value>>8, register2Value};
   uint16_t crcVal = crc_DPS(message, 11);
   message[11] = crcVal>>8;
   message[12] = crcVal;
