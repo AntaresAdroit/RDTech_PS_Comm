@@ -7,3 +7,4 @@ Implement bidirectional communication. Right now, the code implements functions 
 
 2021_04_30:
 Fixed a bug where hardcoded references to the Serial1 object were used in the class instead of using the Stream object pointer (my C++ is weaksauce sometimes).
+Fixed a bug in the packet message array size in the sendData and sendData2 functions.
