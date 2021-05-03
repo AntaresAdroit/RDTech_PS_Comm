@@ -7,6 +7,7 @@ class DPS_powerSupply
     void                  setDPS_amperage (uint16_t milliamps);
     void                  setDPS_voltageamperage (uint16_t centivolts, uint16_t milliamps);
     void                  setDPS_outputOn (bool turnOn);
+    void                  setDPS_fourStates(uint16_t centivolts, uint16_t milliamps, bool keyLock, bool turnOn);
     void                  initDPS(Stream &stream, uint8_t deviceAddress);
 
   private:
