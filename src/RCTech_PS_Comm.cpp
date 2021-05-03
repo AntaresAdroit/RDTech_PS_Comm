@@ -27,6 +27,31 @@ void DPS_powerSupply::setDPS_outputOn (bool turnOn){
   sendData(0x06, 0x0009, turnOn);
 }
 
+//Allows setting of output voltage and current limit settings with key lock and output states
+void DPS_powerSupply::setDPS_fourStates(uint16_t centivolts, uint16_t milliamps, bool keyLock, bool turnOn){
+  byte message[29] = {
+                      _deviceAddress, 
+                      0x10,                           //*functionCode
+                      0x00, 0x00,                     //*starting register addresses
+                      0x00,0x0A,                      //*number of adresses
+                      0x14,                           //*number of bytes
+                      centivolts>>8, centivolts,      //register 0
+                      milliamps>>8, milliamps,        //register 1
+                      0x00, 0x00,                     //register 2
+                      0x00, 0x00,                     //register 3
+                      0x00, 0x00,                     //register 4
+                      0x00, 0x00,                     //register 5
+                      0x00, keyLock,                  //register 6
+                      0x00, 0x00,                     //register 7
+                      0x00, 0x00,                     //register 8
+                      0x00, turnOn,                   //register 9
+                    };
+  uint16_t crcVal = crc_DPS(message, 27);
+  message[27] = crcVal>>8;
+  message[28] = crcVal;
+  _stream->write(message, 29);
+}
+
 //sends data to the power supply
 void DPS_powerSupply::sendData(uint8_t functionCode, uint16_t registerAddress, uint16_t registerValue){
   byte message[8] = {_deviceAddress, functionCode, registerAddress>>8, registerAddress, registerValue>>8, registerValue};
