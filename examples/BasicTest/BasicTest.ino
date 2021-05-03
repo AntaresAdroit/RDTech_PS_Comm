@@ -21,18 +21,19 @@ void loop() {
   supply1.setDPS_amperage(400);
   delay(500);
   supply1.setDPS_outputOn(true);
-  delay(7000);
-  supply1.setDPS_voltage(900);
-  delay(7000);
+  delay(3000);
   supply1.setDPS_outputOn(false);
-  delay(500);
-  supply1.setDPS_voltageamperage(600, 1000);
+  delay(3000);
+  supply1.setDPS_voltageamperage(700, 1000);
   delay(500);
   supply1.setDPS_outputOn(true);
-  delay(7000);
+  delay(3000);
   supply1.setDPS_outputOn(false);
-  delay(7000);
-
+  delay(3000);
+  supply1.setDPS_fourStates(500,500,true,true);
+  delay(3000);
+  supply1.setDPS_fourStates(800,200,false,false);
+  delay(10000);
 }
 
 
